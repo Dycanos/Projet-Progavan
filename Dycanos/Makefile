@@ -5,7 +5,7 @@ INC = $(shell find -type f -name "*.h")
 SRC = $(shell find -type f \( -iname "*.c" ! -iname "tests.c" \))
 OBJ = $(SRC:.c=.o)
 
-PROG = spacebattle
+PROG = minijeu
 
 .o: .c $(INC)
 	gcc $(CFLAGS) -c $<
