@@ -8,6 +8,6 @@
 #include <time.h>
 
 //all project headers
-
+#include "sdl2-help.h"
 //main's fonctions
 #endif
