@@ -10,7 +10,7 @@ PROG = flute
 .o: .c $(INC)
 	gcc $(CFLAGS) -c $<
 
-flute: $(OBJ)
+$(PROG): $(OBJ)
 	gcc $(CFLAGS) $(OBJ) $(LDFLAGS) -o $@
 
 clean:

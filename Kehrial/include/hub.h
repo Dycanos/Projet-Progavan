@@ -6,8 +6,13 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+//#include <SDL2/SDL.h>
 
 //all project headers
 #include "sdl2-help.h"
+#include "values.h"
+#include "struct.h"
+#include "textures.h"
+
 //main's fonctions
 #endif
