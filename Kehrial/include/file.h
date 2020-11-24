@@ -1,1 +1,2 @@
-void loadmap();
+char ** loadmap();
+void printtab(char **, int);

@@ -43,7 +43,8 @@ int main() {
   textures_t textures;
   SDL_Renderer *renderer;
   SDL_Window *window;
-  loadmap();
+  char **tab = loadmap();
+  printtab(tab, 5);
   init(&window, &renderer, &textures);
   while(handle_events(&event)){
     //rien
