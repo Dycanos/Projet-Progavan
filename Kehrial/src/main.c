@@ -1,4 +1,13 @@
 #include "hub.h"
+/* 
+void loadmap(){
+  char chaine[8] = "";
+  FILE *fp = fopen("ressources/map.txt", "r");
+  while (fgets(chaine, 6, fp) != NULL) {
+    printf(chaine);
+  }
+  fclose(fp);
+} */
 
 void refresh_graphics(SDL_Renderer *renderer, textures_t *textures){
   clear_renderer(renderer);
@@ -34,6 +43,7 @@ int main() {
   textures_t textures;
   SDL_Renderer *renderer;
   SDL_Window *window;
+  loadmap();
   init(&window, &renderer, &textures);
   while(handle_events(&event)){
     //rien
