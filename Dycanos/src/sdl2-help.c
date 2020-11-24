@@ -1,9 +1,3 @@
-/**
- * \file sdl2-light.c
- * \author Maire Louis & Jacques Louis
- * \version 6.9
- * \date 10 mars 2020
-*/
 #include "hub.h"
 
 /**
