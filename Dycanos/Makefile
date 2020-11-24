@@ -5,17 +5,16 @@ INC = $(shell find -type f -name "*.h")
 SRC = $(shell find -type f \( -iname "*.c" ! -iname "tests.c" \))
 OBJ = $(SRC:.c=.o)
 
-PROG = minijeu
+PROG = flute
 
 .o: .c $(INC)
 	gcc $(CFLAGS) -c $<
 
-spacebattle: $(OBJ)
+$(PROG): $(OBJ)
 	gcc $(CFLAGS) $(OBJ) $(LDFLAGS) -o $@
 
 clean:
 	rm -f *~ $(OBJ) $(PROG)
-	rm -rf latex html
 
 re:
 	make clean
