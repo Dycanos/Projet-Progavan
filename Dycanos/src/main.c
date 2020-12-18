@@ -1,9 +1,11 @@
 #include "hub.h"
 
-void refresh_graphics(SDL_Renderer *renderer, textures_t *textures){
+void refresh_graphics(SDL_Renderer *renderer, textures_t *textures,char** tab){
   clear_renderer(renderer);
   apply_background(renderer, textures);
+  apply_sprite(renderer,textures,tab);
   update_screen(renderer);
+  
 }
 
 int handle_events(SDL_Event *event){
@@ -22,10 +24,10 @@ int handle_events(SDL_Event *event){
   return(1);
 }
 
-void init(SDL_Window **window, SDL_Renderer **renderer, textures_t *textures){
+void init(SDL_Window **window, SDL_Renderer **renderer, textures_t *textures,char** tab){
   init_sdl(window, renderer,  W_WIDTH, W_HEIGHT);
   init_textures(*renderer, textures);
-  refresh_graphics(*renderer, textures);
+  refresh_graphics(*renderer, textures,tab);
 }
 
 
@@ -34,9 +36,9 @@ int main() {
   textures_t textures;
   SDL_Renderer *renderer;
   SDL_Window *window;
-  init(&window, &renderer, &textures);
   char ** tableau = lire_fichier();
-  afficher_tableau(tableau,5,5);
+  afficher_tableau(tableau,T_HEIGHT,T_WIDTH);
+  init(&window, &renderer, &textures,tableau);
   while(handle_events(&event)){
     //rien
     // mais genre vraiment rien

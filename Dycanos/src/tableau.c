@@ -33,10 +33,10 @@ void afficher_tableau(char** tab,int n,int m)
 char** lire_fichier()
 {
 	FILE* pFile = fopen("ressources/tableau.txt","r");
-	char** tableau = allouer_tab_2D(6,6);
+	char** tableau = allouer_tab_2D(T_WIDTH,T_HEIGHT);
 	int test;
-	for(int i =0;i<5;i++){
-		for(int j = 0;j<6;j++){
+	for(int i =0;i<T_WIDTH;i++){
+		for(int j = 0;j<T_HEIGHT+1;j++){
 			test = fgetc(pFile);
 			tableau[i][j] = test;
 		}
