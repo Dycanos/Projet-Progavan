@@ -62,6 +62,10 @@ void bordure(sprite_t *sprite)
 
 }
 
+/**
+ * \brief La fonction gère que le Steve et les Zombies reste dans les Murs du jeu
+ * \param sprite données d'une texture
+ */ 
 void bordureMur(sprite_t *sprite)
 {
   // MUR EN HAUT A GAUCHE

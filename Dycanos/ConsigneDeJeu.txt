@@ -25,3 +25,5 @@ make clean : pour nettoyer
 make re : pour nettoyer et compiler
 
 ./flute : pour Executer le jeu
+
+https://github.com/Dycanos/Projet-Progavan lien du Git (Le dossier Dycanos est celui de JACQUES Louis , Le dossier KEHRIAL est celui de MAIRE Louis).

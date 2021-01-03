@@ -1,5 +1,13 @@
 #include "hub.h"
-
+/**
+ * \brief La fonction permet d'initialiser un sprite
+ * \param sprite données d'une texture
+ * \param x valeur horizontale
+ * \param y valeur verticale
+ * \param w largeur
+ * \param h hauteur
+ * \param v vitesse
+ */
 void init_sprite(sprite_t *sprite,int x, int y, int w, int h, int v)
 {
     sprite->x=x;
@@ -11,7 +19,10 @@ void init_sprite(sprite_t *sprite,int x, int y, int w, int h, int v)
 }
 
 
-
+/**
+ * \brief La fonction permet d'initialiser les ennemies
+ * \param world les données du monde
+ */
 void init_Zombie(world_t *world)
 {
 	int x;
@@ -30,7 +41,7 @@ void init_Zombie(world_t *world)
    		y = 350 + (int)((float)rand() * (500-350+1)/ (RAND_MAX-1));//distance y égale entre les vaisseaux 
  	    init_sprite(&world->enemies[i],x,y, S_WIDTH, S_HEIGHT, 1);
   		 }
- 		else if
+ 		else
  		{
     		x = 2*S_WIDTH + i*HORIZONTAL_DIST;//position x aléatoire
    			y = 350 + (int)((float)rand() * (500-350+1)/ (RAND_MAX-1));//distance y égale entre les vaisseaux 
@@ -39,13 +50,19 @@ void init_Zombie(world_t *world)
  	}
 }
 
-
+/**
+ * \brief La fonction permet d'initialiser les données du monde du jeu
+ * \param world les données du monde
+ */
 void init_data(world_t *world){
 
     init_sprite(&world->Steve,675,(W_HEIGHT-2*S_HEIGHT), S_WIDTH,S_HEIGHT, 2);
     init_Zombie(world);
 } 
-
+/**
+ * \brief La fonction permet de faire avancer les Zombies
+ * \param world les données du monde
+ */
 void update_Zombie(world_t *world){
   for (int i = 0; i < NB_ENEMIES; i++) {
   	if (world->Steve.x > world->enemies[i].x)

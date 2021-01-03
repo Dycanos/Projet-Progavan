@@ -1,5 +1,11 @@
 #include "hub.h"
 
+/**
+ * \brief La fonction rafraichit l'écran en fonction de l'état des données du monde
+ * \param renderer la surface de l'écran de jeu
+ * \param world les données du monde
+ * \param textures les textures
+ */
 void refresh_graphics(SDL_Renderer *renderer, textures_t *textures,char** tab,world_t *world){
   clear_renderer(renderer);
   apply_background(renderer, textures);
@@ -9,7 +15,11 @@ void refresh_graphics(SDL_Renderer *renderer, textures_t *textures,char** tab,wo
   update_screen(renderer);
   
 }
-
+/**
+ * \brief La fonction gère les évènements ayant eu lieu et qui n'ont pas encore été traités
+ * \param event paramètre qui contient les événements
+ * \param world les données du monde
+ */
 int handle_events(SDL_Event *event,world_t *world){
   while( SDL_PollEvent( event ) ) {
     //Si l'utilisateur a cliqué sur le X de la fenêtre                                                            
@@ -55,6 +65,14 @@ int handle_events(SDL_Event *event,world_t *world){
   return(1);
 }
 
+/**
+ * \brief fonction qui initialise le jeu: initialisation de la partie graphique (SDL), chargement des textures, initialisation des données
+ * \param window la fenêtre du jeu
+ * \param renderer le renderer
+ * \param textures les textures
+ * \param world le monde
+  * \param tab le tableau du .txt
+ */
 void init(SDL_Window **window, SDL_Renderer **renderer, textures_t *textures,char** tab,world_t *world){
   init_sdl(window, renderer,  W_WIDTH, W_HEIGHT);
   init_textures(*renderer, textures);
@@ -62,6 +80,10 @@ void init(SDL_Window **window, SDL_Renderer **renderer, textures_t *textures,cha
   refresh_graphics(*renderer, textures,tab,world);
 }
 
+/**
+ * \brief La fonction met à jour les données en tenant compte de la physique du monde
+ * \param world les données du monde
+ */
 void update_data(world_t *world){
   update_Zombie(world);
   handle_sprites_collision(world);
@@ -74,6 +96,15 @@ void update_data(world_t *world){
   }
 
 } 
+
+/**
+ * \brief fonction qui fait avancer le jeu dans le temps, itération par itération, au moyen d'un boucle
+ * \param renderer le renderer
+ * \param event les évènements
+ * \param textures les textures
+ * \param world les données du monde
+ * \param tab le tableau du .txt
+ */
 void boucle_jeu(SDL_Renderer *renderer, SDL_Event *event, textures_t *textures, world_t *world,char** tab){
   clock_t temps;
   srand(time(NULL));
