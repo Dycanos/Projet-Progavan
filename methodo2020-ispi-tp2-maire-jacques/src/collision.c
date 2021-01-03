@@ -123,3 +123,4 @@ int handle_sprites_collision(world_t *world,int t)
   }
   return 0;
 }
+

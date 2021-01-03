@@ -1,0 +1,27 @@
+REGLES DU JEU FLUTE!:
+
+Commanndes : 
+
+z = Aller en haut
+d = Aller a droite
+q = Aller a gauche
+s = Aller en bas
+a = Aller en haut a gauche
+e = Aller en haut a droite
+w = Aller en bas a gauche
+c = Aller en bas a droite
+
+ECHAP = Quitter le Jeu
+
+BUT DU JEU : 
+
+C'est trés simple , il faut juste survivre au Zombie !
+Si il vous touche c'est fini.
+
+Pour Compiler : 
+
+make : pour Compiler 
+make clean : pour nettoyer
+make re : pour nettoyer et compiler
+
+./flute : pour Executer le jeu

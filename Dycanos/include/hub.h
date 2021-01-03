@@ -14,5 +14,7 @@
 #include "struct.h"
 #include "textures.h"
 #include "tableau.h"
+#include "init.h"
+#include "collide.h"
 //main's fonctions
 #endif
